@@ -5,6 +5,8 @@
 # gh auth refresh -h github.com -s admin:org
 
 
+#  gh auth login -s admin:org
+
 - name: Setup Prompt  
   ansible.builtin.shell: set-prompt github-runner
 
