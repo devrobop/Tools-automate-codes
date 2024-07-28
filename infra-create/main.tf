@@ -4,6 +4,15 @@ resource "aws_instance" "tool" {
   vpc_security_group_ids = [aws_security_group.tool-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
 
+
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
+    }
+  }
+
   tags = {
     Name = var.name
   } 
@@ -12,7 +21,7 @@ resource "aws_instance" "tool" {
  
 
 resource "aws_security_group" "tool-sg" {
-   name = "$(var.name)-sg"
+   name        = "$(var.name)-sg"
    description = "$(var.name)-sg"
 
    egress {

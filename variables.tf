@@ -7,5 +7,11 @@ variable "tools" {
           "AdministratorAccess"
         ]
     }
+
+    vault = {
+      instance_type = "t2.micro"
+      policy_name = []
+    }
+
   }
 }
