@@ -1,5 +1,4 @@
 name: Provision Tool Infra
-# run-name: ${{ github.actor }} is learning Github Actions
 on: [push, workflow_dispatch]
 jobs:
   Provision:
