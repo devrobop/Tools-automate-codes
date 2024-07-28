@@ -1,0 +1,11 @@
+name: Run vault setup
+on: [workflow_dispatch]
+jobs:
+  Provision:
+    runs-on: self-hosted
+    steps:
+       - uses: actions/checkout@v4
+       - name: Run Vault Setup
+         run: ansible-playbook -i vault-internal.devrobo.online, tool-setup.yml -e ansible_username=ec2-user -e ansible_password=DevOps321 -e tool_name=vault
+
+      
