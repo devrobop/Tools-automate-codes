@@ -36,10 +36,10 @@
 #     url: https://cli.github.com/packages/rpm/gh-cli.repo
 #     dest: /etc/yum.repos.d/gh-cli.repo
 
-- name: Install github cli
-  ansible.builtin.dnf:
-    name: gh
-    state: latest    
+# - name: Install github cli
+#   ansible.builtin.dnf:
+#     name: gh
+#     state: latest    
 
 - name: Grab Token
   ansible.builtin.shell: |
