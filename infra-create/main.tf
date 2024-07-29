@@ -9,7 +9,7 @@ resource "aws_instance" "tool" {
     market_type = "spot"
     spot_options {
       instance_interruption_behavior = "stop"
-      spot_instance_type = "persistent"
+      spot_instance_type             = "persistent"
     }
   }
 
@@ -28,7 +28,7 @@ resource "aws_security_group" "tool-sg" {
     from_port = 0
     to_port = 0
     protocol = "-1"
-    cidr_blocks = ["0.0.0.0"]
+    cidr_blocks = ["0.0.0.0/0"]
     
    }
 
@@ -36,7 +36,7 @@ resource "aws_security_group" "tool-sg" {
     from_port = 22
     to_port = 22
     protocol = "TCP"
-    cidr_blocks = ["0.0.0.0"]
+    cidr_blocks = ["0.0.0.0/0"]
     
    }
    
