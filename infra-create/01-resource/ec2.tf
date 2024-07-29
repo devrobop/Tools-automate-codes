@@ -1,8 +1,15 @@
-resource "aws_instance" "web" {
-  ami           = "ami-041e2ea9402c46c32"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "demo-for-terraform"
+terraform {
+  backend "s3" {
+    bucket = "devrobo-s4"
+    # key = "tools/terraform.tfstate"
+    key = "test/key/terraform.tfstate"
+    region = "us-east-1"
   }
+}
+
+output "env" {
+  value = "var.env"
+}
+variable "env" {
+  
 }
