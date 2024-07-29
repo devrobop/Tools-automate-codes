@@ -21,8 +21,8 @@ resource "aws_instance" "tool" {
  
 
 resource "aws_security_group" "tool-sg" {
-   name        = "$(var.name)-sg"
-   description = "$(var.name)-sg"
+   name        = "${var.name}-sg"
+   description = "${var.name}-sg"
 
    egress {
     from_port   = 0
