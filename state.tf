@@ -5,3 +5,4 @@ terraform {
     region = "us-east-1"
   }
 }
+# s3 bucket and iam role deleted
