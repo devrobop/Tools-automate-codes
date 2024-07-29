@@ -1,4 +1,4 @@
-resource "aws_iam_role" "test_role" {
+resource "aws_iam_role" "role" {
   name = "${var.name}-role"
 
   assume_role_policy = jsonencode({
