@@ -8,8 +8,8 @@
     name: vault
     state: latest
 
-- name: Start vault service
+- name: Start Vault serice
   ansible.builtin.systemd_service:
     name: vault
     state: restarted
-    enabled: yes        
+    enabled: yes
