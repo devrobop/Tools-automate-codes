@@ -6,8 +6,7 @@
   ignore_errors: true
 
 - name: Install Minikube
-  ansible.builtin.shell: dnf install https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm docker -y
-    state: installed 
+  ansible.builtin.shell: dnf install https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm docker -y 
 
   
 - name: Download Kubectl
