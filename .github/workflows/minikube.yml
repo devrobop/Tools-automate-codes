@@ -6,8 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run minikube Setup
-        run: ansible-playbook -i minikube-internal.devrobo.online, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=minikube
+        run: ansible-playbook -i localhost, tool-setup.yml -e ansible_user=${{ secrets.SSH_USER }} -e ansible_password=${{ secrets.SSH_PASS }} -e tool_name=minikube
 
 
 
-      ####
+      
