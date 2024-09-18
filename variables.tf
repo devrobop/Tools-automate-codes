@@ -35,4 +35,3 @@ variable "hosted_zone_id" {
   default = "Z07887863W5D2X6RVH2WV"
 }  
  
-##
