@@ -2,21 +2,20 @@
   ansible.builtin.shell: set-prompt github-runner
 
 - name: Extend Disk Volume
-  ansible.builtin.shell: growpart /dev/nvme0n1 4 ; lvextend -r -L +10G /dev/mapper/RootVG-varVol  
+  ansible.builtin.shell: growpart /dev/nvme0n1 4 ; lvextend -r -L +10G /dev/mapper/RootVG-varVol
   ignore_errors: true
 
 - name: Install Minikube
-  ansible.builtin.shell: dnf install https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm docker -y 
+  ansible.builtin.shell: dnf install https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm docker -y
 
-  
 - name: Download Kubectl
+
   ansible.builtin.get_url:
-   #url: https://d1.k8s.io/release/v1.30.3/bin/linux/amd64/kubectl
-    url: https://dl.k8s.io/release/v1.31.0/bin/linux/arm64/kubectl 
+    url: https://dl.k8s.io/release/v1.31.0/bin/linux/arm64/kubectl
     dest: /bin/kubectl
     mode: '0775'
 
 - name: Start Minikube
   ansible.builtin.shell: minikube start --force
-    
+
 #    
